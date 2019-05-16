@@ -1,0 +1,29 @@
+import math
+import sys
+
+while True:
+    try:
+        L=list(map(int,input().split()))
+        p=int(L[0])
+        q=int(L[1])
+        r=int(L[2])
+        s=int(L[3])
+        t=int(L[4])
+        u=int(L[5])
+    except EOFError:
+        break;
+    lo=0.0; hi=1.0;
+    if(p*math.exp(-1)+q*math.sin(1)+r*math.cos(1)+s*math.tan(1)+t+u>1e-9 or p+r+u<0):
+        print("No solution")
+        continue
+    
+    for i in range(0,30):
+        mi=(lo+hi)/2
+        f=p*math.exp(-mi)+q*math.sin(mi)+r*math.cos(mi)+s*math.tan(mi)+t*mi*mi+u
+        if(f>0): 
+            lo=mi
+        else:
+            hi=mi
+            
+    print('{0:.4f}'.format(lo))
+    continue
