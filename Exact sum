@@ -1,0 +1,17 @@
+arr = []
+e = int(input())
+for i in range(0, e):
+    arr.append(int(input()))
+k=int(input())
+a1=a2=0
+max = 100000
+for i in range(0,e):
+    for j in range(i+1,e):
+        if arr[i]+arr[j]==k:
+            if(arr[i]-arr[j]<max):
+                a1=arr[i]
+                a2=arr[j]
+                max=arr[i]-arr[j]
+
+print (a1,a2)
+
