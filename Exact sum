@@ -1,17 +1,25 @@
-arr = []
-e = int(input())
-for i in range(0, e):
-    arr.append(int(input()))
-k=int(input())
-a1=a2=0
-max = 100000
-for i in range(0,e):
-    for j in range(i+1,e):
-        if arr[i]+arr[j]==k:
-            if(arr[i]-arr[j]<max):
-                a1=arr[i]
-                a2=arr[j]
-                max=arr[i]-arr[j]
-
-print (a1,a2)
-
+import sys
+while True:   
+    try:
+        #arr = []
+        x = int(input())
+        arr = list(map(int,input().split()))
+        k=int(input())
+        input()
+        a1=a2=0
+        arr.sort()
+        max = 100000
+    except EOFError:
+        break;
+    for i in range(0,x):
+        for j in range(i+1,x):
+            if arr[i]+arr[j]==k:
+                if(arr[j]-arr[i]<max):
+                    a1=arr[i]
+                    a2=arr[j]
+                    max=arr[j]-arr[i]
+    
+    print('Peter should buy books whose prices are %d and %d.'%(a1,a2))
+    print('')
+   
+    
