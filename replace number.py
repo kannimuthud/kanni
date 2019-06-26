@@ -10,3 +10,14 @@ while n>=p:
     s=r*p+s
     p=p*10
 print(s)
+
+
+
+n=int(input())
+s=0
+p=1
+while n>=p:
+    r=(n//p)%10
+    s=s*10+r
+    p=p*10
+print(s)
